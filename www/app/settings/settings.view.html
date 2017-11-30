@@ -1,0 +1,41 @@
+<ion-view view-title="Settings">
+  <ion-content class="padding">
+
+    <ion-list ng-form="vm.settingsForm">
+        <ion-item class="item-divider item-energized">Traveler Defaults</ion-item>
+        <ion-item class="item-input">
+            <span class="input-label">FirstName</span>
+            <input type="text" ng-model="settingsSvc.firstName" placeholder="Provide Traveler FirstName">
+        </ion-item>
+        <ion-item class="item-input">
+            <span class="input-label">LastName</span>
+            <input type="text" ng-model="settingsSvc.lastName" placeholder="Provide Traveler LastName">
+        </ion-item>
+        <ion-item class="item-input">
+            <span class="input-label">Department</span>
+            <input type="text" ng-model="settingsSvc.department" placeholder="Provide Default Department">
+        </ion-item>
+        <ion-item class="item-input">
+            <span class="input-label">Email</span>
+            <input type="text" ng-model="settingsSvc.email" placeholder="Provide Default Email">
+        </ion-item>
+        <ion-item class="item-input">
+            <span class="input-label">HomeCity</span>
+            <input type="text" ng-model="settingsSvc.homeCity" placeholder="Provide Traveler Home City">
+        </ion-item>
+        <ion-item class="item-divider item-energized">Trip Defaults</ion-item>
+        <ion-item class="item-input">
+            <span class="input-label">Title</span>
+            <input type="text" ng-model="settingsSvc.defaultTitle" placeholder="Provide Default Title">
+        </ion-item>
+        <ion-item class="item-input">
+            <span class="input-label">Purpose</span>
+            <input type="text" ng-model="settingsSvc.defaultPurpose" placeholder="Provide Default Purpose">
+        </ion-item>
+        <ion-item>
+            Swipe to send diagnostic logfile
+            <ion-option-button class="button-calm" ng-click="viewLog()">Send</ion-option-button>
+        </ion-item>
+    </ion-list>
+    </ion-content>
+</ion-view>

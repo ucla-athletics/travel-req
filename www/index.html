@@ -16,30 +16,119 @@
       }
     </script>-->
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ng-cordova.min.js"></script>
+    <script src="lib/filelogger.min.js"></script>
+    <script src="lib/pouchdb-6.0.6.min.js"></script>
+    <script src="lib/moment.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-
+  	<!-- pdfMake library and fonts for running reports -->
+    <script src="lib/pdfmake/pdfmake.min.js"></script>
+	<script src="lib/pdfmake/vfs_fonts.js"></script>
+    <!--underscore library used for processing collections  -->
+	<script src="lib/underscore-min.js"></script>
+      
     <!-- your app's js -->
     <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter">
+      
+    <script src="app/blocks/blocks.module.js"></script>
+    <!--router - block for distributed routing files -->
+    <script src="app/blocks/router/router.module.js"></script>
+    <script src="app/blocks/router/routerHelperProvider.js"></script>
+    <!--pouch - block for persisting data in a pouch DB -->
+    <script src="app/blocks/pouchdb/pouch.module.js"></script>
+    <script src="app/blocks/pouchdb/pouch.service.js"></script>
+    <!--logger - block to centralize all logging code -->
+    <script src="app/blocks/logger/logger.module.js"></script>
+    <script src="app/blocks/logger/logger.js"></script>
+    <!--exception - block for custom ex type and ex handling -->
+    <script src="app/blocks/exception/exception.module.js"></script>
+    <script src="app/blocks/exception/exceptionHandlerProvider.js"></script>
+    <script src="app/blocks/exception/exception.js"></script>
+    <!--email - block to wrap the cordova-email-composer plugin as a service -->
+    <script src="app/blocks/email/email.module.js"></script>
+    <script src="app/blocks/email/email.service.js"></script>
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
+
+    <script src="js/routes.module.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+
+    <script src="app/settings/settings.module.js"></script>      
+    <script src="app/settings/settings.service.js"></script>      
+    <script src="app/settings/settings.controller.js"></script>      
+    <script src="app/settings/settings.routes.js"></script>      
+      
+    <script src="app/trips/trips.module.js"></script>
+    <script src="app/trips/trips.routes.js"></script>
+    <script src="app/trips/trips.service.js"></script>
+    <script src="app/trips/trips.controller.js"></script>
+<!--    <script src="app/trips/trip.controller.js"></script>-->
+
+    <script src="app/trip/trip.module.js"></script>
+    <script src="app/trip/trip.routes.js"></script>
+    <script src="app/trip/trip.controller.js"></script>
+      
+    <script src="app/trip/home/home.module.js"></script>
+    <script src="app/trip/home/home.controller.js"></script>
+    <script src="app/trip/home/home.routes.js"></script>
+      
+    <script src="app/trip/dates/dates.module.js"></script>
+    <script src="app/trip/dates/dates.controller.js"></script>
+    <script src="app/trip/dates/dates.routes.js"></script>
+      
+    <script src="app/trip/expenses/expenses.module.js"></script>
+    <script src="app/trip/expenses/expenses.controller.js"></script>
+    <script src="app/trip/expenses/expenses.routes.js"></script>
+    <!-- AIRFARE -->
+    <script src="app/trip/expenses/airfare/airfare.service.js"></script>
+    <script src="app/trip/expenses/airfare/airfare.controller.js"></script>
+    <!-- HOTEL -->
+    <script src="app/trip/expenses/hotel/hotel.service.js"></script>
+    <script src="app/trip/expenses/hotel/hotel.controller.js"></script>
+    <!-- MEAL -->
+    <script src="app/trip/expenses/meal/meal.service.js"></script>
+    <script src="app/trip/expenses/meal/meal.controller.js"></script>
+    <!-- MILEAGE -->
+    <script src="app/trip/expenses/mileage/mileage.service.js"></script>
+    <script src="app/trip/expenses/mileage/mileage.controller.js"></script>
+    <!-- MISCELLANEOUS -->
+    <script src="app/trip/expenses/miscellaneous/miscellaneous.service.js"></script>
+    <script src="app/trip/expenses/miscellaneous/miscellaneous.controller.js"></script>
+    <!-- TRANSPORTATION -->
+    <script src="app/trip/expenses/transportation/transportation.service.js"></script>
+    <script src="app/trip/expenses/transportation/transportation.controller.js"></script>
+      
+    <script src="app/trip/receipts/receipts.module.js"></script>
+    <script src="app/trip/receipts/receipts.service.js"></script>
+    <script src="app/trip/receipts/image.service.js"></script>
+    <script src="app/trip/receipts/receipts.controller.js"></script>
+    <script src="app/trip/receipts/receipt.controller.js"></script>
+    <script src="app/trip/receipts/receipts.routes.js"></script>
+
+    <script src="app/trip/notes/notes.module.js"></script>
+    <script src="app/trip/notes/notes.service.js"></script>
+    <script src="app/trip/notes/notes.controller.js"></script>
+    <script src="app/trip/notes/notes.routes.js"></script>
+      
+    <script src="app/version/version.module.js"></script>
+    <script src="app/version/version.service.js"></script>
+      
+    <script src="app/reports/reports.module.js"></script>
+    <script src="app/reports/report-builder.service.js"></script>
+    <script src="app/reports/report-mock.service.js"></script>
+    <script src="app/reports/report.service.js"></script>
+  </head>
+
+  <body ng-app="starter">
+    <ion-nav-view></ion-nav-view>
   </body>
 </html>

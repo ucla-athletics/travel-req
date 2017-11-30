@@ -1,0 +1,40 @@
+<div class="modal">
+    <ion-header-bar class="bar-energized">
+		<div class="buttons">
+			<button class="button button-positive" ng-click="closeModal()">Cancel</button>
+		</div>
+		<h1 class="title">Add Travel Date</h1>
+		<div class="buttons">
+			<button class="button button-positive" ng-click="saveNew()">Save</button>
+		</div>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <ion-list ng-form="vm.dateForm">
+            <label class="item item-input">
+                <span class="input-label">Date</span>
+                <input type="date" ng-model="newTravelDate.travelDate">
+                </label>
+            <label class="item item-input">
+                <span class="input-label">Depart</span>
+                <input type="time" ng-model="newTravelDate.departTime">
+                </label>
+            <label class="item item-input">
+                <span class="input-label">Arrive</span>
+                <input type="time" ng-model="newTravelDate.returnTime">
+                </label>
+            <ion-item class="item-divider">Meal per Diems:</ion-item>
+            <ion-item class="item-checkbox">
+                <label class="checkbox">
+                <input type="checkbox" ng-model="newTravelDate.isBreakfast">
+                </label>Breakfast</ion-item>
+            <ion-item class="item-checkbox">
+                <label class="checkbox">
+                <input type="checkbox" ng-model="newTravelDate.isLunch">
+                </label>Lunch</ion-item>
+            <ion-item class="item-checkbox">
+                <label class="checkbox">
+                <input type="checkbox" ng-model="newTravelDate.isDinner">
+                </label>Dinner</ion-item>
+        </ion-list>
+    </ion-content>
+</div>

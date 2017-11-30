@@ -1,0 +1,51 @@
+  <div class="modal">
+    <ion-header-bar class="bar-energized">
+		<div class="buttons">
+			<button class="button button-positive" ng-click="closeModal()">Cancel</button>
+		</div>
+		<h1 class="title">Add Trip</h1>
+		<div class="buttons">
+			<button class="button button-positive" ng-click="addTrip()">Save</button>
+		</div>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <ion-list>            
+            <ion-item class="item-divider item-positive">
+                Trip Details</ion-item>
+            <ion-item class="item-input">
+                <span class="input-label">Title</span>
+                <input type="text" ng-model="newTrip.title"></ion-item>
+            <ion-item class="item-input">
+                <span class="input-label">Purpose</span>
+                <input type="text" ng-model="newTrip.purpose"></ion-item>
+            <ion-item class="item-input">
+                <span class="input-label">Home City</span>
+                <input type="text" ng-model="newTrip.homeCity"></ion-item>
+            <ion-item class="item-input">
+                <span class="input-label">Start Date</span>
+                <input type="date" ng-model="newTrip.startDate"></ion-item>
+            <ion-item class="item-input">
+                <span class="input-label">End Date</span>
+                <input type="date" ng-model="newTrip.endDate"></ion-item>
+            <ion-item class="item-input item-select">
+                <div class="input-label">Vehicle Used</div>
+                <select ng-model="newTrip.vehicleUsed">
+                    <option>Personal</option>
+                    <option>Courtesy Car</option>
+                    <option>Univ Vehicle</option>
+                    <option>Other</option>
+                </select></ion-item>
+            <ion-item class="item-divider item-positive">
+                Destinations
+<!--                <i class="icon ion-plus-circled assertive" ng-click="addDestination()"></i>-->
+            </ion-item>
+            <ion-item>
+<!--
+                <ul><li ng-repeat="d in newTrip.destinations">{{d.title}}</li>
+                </ul>
+-->
+                <textarea style="width:100%;" ng-model="newTrip.destinations"></textarea>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</div>

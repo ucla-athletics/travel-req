@@ -1,0 +1,40 @@
+  <div class="modal" ng-controller="MileageCtrl">
+    <ion-header-bar class="bar-energized">
+		<div class="buttons">
+			<button class="button button-positive" ng-click="cancelNew()">Cancel</button>
+		</div>
+		<h1 class="title">Add Mileage</h1>
+		<div class="buttons">
+			<button class="button button-positive" ng-click="saveNew()">Save</button>
+		</div>
+    </ion-header-bar>
+    <ion-content padding="true" scroll="false" class="has-header">
+        <form name="vm.mileageForm">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Date</span>
+                    <input type="date" placeholder="05/21/2015" ng-model="newMileage.date">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Start Location</span>
+                    <input type="text" placeholder="" ng-model="newMileage.startLocation">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Destination</span>
+                    <input type="text" placeholder="" ng-model="newMileage.endLocation">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Mileage</span>
+                    <input type="number" placeholder="" ng-model="newMileage.mileage">
+                </label>
+                <ion-checkbox ng-model="newMileage.isCourtesyCar">Courtesy Car?</ion-checkbox>
+                <label class="item item-input">
+                    <span class="input-label">Places Visited</span>
+                    <textarea style="height:66px;" ng-model="newMileage.placesVisited"></textarea>
+                </label>
+            </ion-list>
+            <button class="button button-stable button-block disabled" 
+                    ng-hide="true" ng-click="addReceipt()">Add Receipt</button>
+        </form>
+    </ion-content>
+</div>

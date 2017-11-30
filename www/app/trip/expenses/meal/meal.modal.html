@@ -1,0 +1,36 @@
+<div class="modal" ng-controller="MealCtrl">
+    <ion-header-bar class="bar-energized">
+		<div class="buttons">
+			<button class="button button-positive" ng-click="cancelNew()">Cancel</button>
+		</div>
+		<h1 class="title">Add Meal Expense</h1>
+		<div class="buttons">
+			<button class="button button-positive" ng-click="saveNew()">Save</button>
+		</div>
+    </ion-header-bar>
+    <ion-content padding="true" scroll="false" class="has-header">
+        <form name="vm.mealForm">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Date</span>
+                    <input type="date" ng-model="newMeal.date">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Names/Title</span>
+                    <input type="text" ng-model="newMeal.guestNames">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Restaurant</span>
+                    <input type="text" ng-model="newMeal.restaurant">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Amount</span>
+                    <input type="number" placeholder="" ng-model="newMeal.amount">
+                </label>
+                <ion-checkbox ng-model="newMeal.isStudentAllowance">Student Host Allowance</ion-checkbox>
+            </ion-list>
+            <button class="button button-stable button-block disabled" 
+                    ng-hide="true" ng-click="addReceipt()">Add Receipt</button>
+        </form>
+    </ion-content>
+</div>

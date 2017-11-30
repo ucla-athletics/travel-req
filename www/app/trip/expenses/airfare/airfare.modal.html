@@ -1,0 +1,43 @@
+  <div class="modal" ng-controller="AirfareCtrl">
+    <ion-header-bar class="bar-energized">
+		<div class="buttons">
+			<button class="button button-positive" ng-click="cancelNew()">Cancel</button>
+		</div>
+		<h1 class="title">Add Airfare</h1>
+		<div class="buttons">
+			<button class="button button-positive" ng-click="saveNew()">Save</button>
+		</div>
+    </ion-header-bar>
+    <ion-content padding="true" scroll="false" class="has-header">
+        <form name="vm.airfareForm">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Date</span>
+                    <input type="date" ng-model="newAirfare.date">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Airline</span>
+                    <input type="text" ng-model="newAirfare.airline">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Depart</span>
+                    <input type="time" placeholder="12:37 PM" ng-model="newAirfare.depart">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Arrive</span>
+                    <input type="time" placeholder="3:34 PM" ng-model="newAirfare.arrive">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Destinations</span>
+                    <input type="text" placeholder="" ng-model="newAirfare.destinations">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Amount</span>
+                    <input type="number" placeholder="250.00" ng-model="newAirfare.amount">
+                </label>
+            </ion-list>
+            <button class="button button-stable button-block disabled" 
+                    ng-hide="true" ng-click="addReceipt()">Add Receipt</button>
+        </form>
+    </ion-content>
+</div>

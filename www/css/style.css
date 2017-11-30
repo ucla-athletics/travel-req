@@ -1,1 +1,24 @@
 /* Empty. Add your own CSS if you like */
+
+.btn-add-expense {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -20px;
+  z-index: 100;
+  font-size: 44px;
+  color: #2a5ea6; }
+
+.pane.top-view {
+  top: 0;
+  height: 35%;
+  background-color: rgba(128,256,64,0.3);
+  border: solid red thin;
+}
+
+.pane.bottom-view {
+  top: 35%;
+  height: 65%;
+  border: solid green thin;
+}

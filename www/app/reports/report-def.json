@@ -1,0 +1,44 @@
+{
+    "header":{"text":"UCLA Reimbursement Report\ntest mileage","style":"header"},
+    "styles":{
+        "header":{"fontSize":12,"bold":true,"alignment":"center","margin":[0,8,0,0]},
+        "subheader":{"fontSize":10,"bold":true,"margin":[0,2,0,2]},
+        "tableExample":{"margin":[0,2,0,2]},
+        "tableHeader":{"bold":true,"fontSize":10,"color":"white","fillColor":"#06b","alignment":"center"},
+        "rowHeader":{"bold":true,"fontSize":10,"color":"white","fillColor":"#3F8ccc","alignment":"right"}
+    },
+    "defaultStyle":{"fontSize":8},
+ 
+ "content":[
+     {"text":"Traveler Information","style":"subheader"},
+     {"style":"tableExample","table":{"widths":[162,162,162],"body":[
+         [{"text":"Full Name","style":"tableHeader"},{"text":"Sport/Functional Area","style":"tableHeader"},{"text":"Email","style":"tableHeader"}],
+         [" ","",""],
+         [{"text":"Trip Type","style":"tableHeader"},{"text":"Home City","style":"tableHeader"},{"text":"Vehicle Used","style":"tableHeader"}],
+         [" ","",""],
+/*         [{"text":"Travelers","style":"rowHeader"},{"text":"Individual","colSpan":2}],
+         [{"text":"Trip","style":"rowHeader"},{"text":"test mileage","colSpan":2}],*/
+         [{"text":"Purpose","style":"rowHeader"},{"text":"need to see mileage in report","colSpan":2}],
+/*         [{"text":"Destinations","style":"rowHeader"},{"text":"","colSpan":2}],
+         [{"text":"Home City","style":"rowHeader"},{"text":"","colSpan":2}],
+         [{"text":"Vehicle Used","style":"rowHeader"},{"text":"Personal","colSpan":2}],*/
+         [{"text":"Destinations/Notes:","style":"rowHeader"},{"text":" ","colSpan":2}],
+/*         [{"text":" ","colSpan":3}]*/
+     ]}},
+
+     {"text":"Travel per Diem","style":"subheader"},
+     {"style":"tableExample","table":{"widths":[106,100,100,50,50,50],"body":[[{"text":"Date","style":"tableHeader"},{"text":"Depart","style":"tableHeader"},{"text":"Return","style":"tableHeader"},{"text":"B","style":"tableHeader"},{"text":"L","style":"tableHeader"},{"text":"D","style":"tableHeader"}]]}},
+
+{"text":"Airfare","style":"subheader"},{"style":"tableExample","table":{"widths":[100,100,176,100],"body":[[{"text":"Date","style":"tableHeader"},{"text":"Airline","style":"tableHeader"},{"text":"Destinations","style":"tableHeader"},{"text":"Amount","style":"tableHeader"}]]}},
+
+{"text":"Hotel/Lodging","style":"subheader"},{"style":"tableExample","table":{"widths":[100,100,176,100],"body":[[{"text":"Date","style":"tableHeader"},{"text":"Hotel","style":"tableHeader"},{"text":"Amount","style":"tableHeader"},{"text":"Notes","style":"tableHeader"}]]}},
+
+{"text":"Ground Transportation","style":"subheader"},{"style":"tableExample","table":{"widths":[100,280,100],"body":[[{"text":"Date","style":"tableHeader"},{"text":"Company","style":"tableHeader"},{"text":"Amount","style":"tableHeader"}],["05-02-2016","Hertz","$254.81"]]}},
+
+{"text":"Mileage","style":"subheader"},{"style":"tableExample","table":{"widths":[50,130,130,50,50,50],"body":[[{"text":"Date","style":"tableHeader"},{"text":"Start/Dest","style":"tableHeader"},{"text":"Visited","style":"tableHeader"},{"text":"Miles","style":"tableHeader"},{"text":"Rate","style":"tableHeader"},{"text":"Amount","style":"tableHeader"}],["05-02-16","Agoura\nWestwood","","28","$0.54","$15.12"],["05-02-16","Westwood\nRiverside","none, noen, noe","43.2","$0.36","$15.55"],["05-01-16","test\nlater","","56","$0.36","$20.16"]]}},
+
+{"text":"Entertainment/Team Meals","style":"subheader"},{"style":"tableExample","table":{"widths":[75,110,130,70,75],"body":[[{"text":"Date","style":"tableHeader"},{"text":"Guests","style":"tableHeader"},{"text":"Restaurant","style":"tableHeader"},{"text":"Student Host Allowance","style":"tableHeader"},{"text":"Amount","style":"tableHeader"}]]}},
+
+{"text":"Miscellaneous","style":"subheader"},{"style":"tableExample","table":{"widths":[100,276,100],"body":[[{"text":"Date","style":"tableHeader"},{"text":"Description","style":"tableHeader"},{"text":"Amount","style":"tableHeader"}]]}}
+           ]
+}

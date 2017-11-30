@@ -1,0 +1,42 @@
+<ion-view view-title="Trips">
+    <ion-nav-buttons side="right">
+      <button class="button button-energized" ng-click="openModal()">ADD</button>
+    </ion-nav-buttons>
+  <ion-content>
+      <ion-list can-swipe="true">
+        <ion-item class="item-divider">Pending Trips</ion-item>
+        <ion-item ng-repeat="t in tripSvc.trips | filter:{isSubmitted:false}" ng-click="gotoTrip(t)">
+        <div style="font-size:1.2em;font-weight:bold;color:navy;">{{t.title}}</div>
+            <b>from:</b><span> {{t.startDate | date:'MMM-dd'}}</span>
+            <b>&nbsp;to:</b><span> {{t.endDate | date:'MMM-dd'}}</span>
+            <span class="item-note">
+                ${{t.totalExpenses()}}
+            </span>
+        <ion-option-button class="button-balanced"
+                           ng-click="sendTrip(t)">
+            Submit</ion-option-button>
+        <ion-option-button class="button-assertive"
+                           ng-click="deleteTrip(t)">
+            Delete</ion-option-button>
+      </ion-item>
+        <ion-item class="item-divider">Submitted Trips</ion-item>
+        <ion-item ng-repeat="t in tripSvc.trips | filter:{isSubmitted:true}" ng-click="gotoTrip(t)"
+                  style="background-color:#ccc">
+        <div style="font-size:1.2em;font-weight:bold;color:navy;">{{t.title}}</div>
+            <b>from:</b><span> {{t.startDate | date:'MMM-dd'}}</span>
+            <b>&nbsp;to:</b><span> {{t.endDate | date:'MMM-dd'}}</span>
+            <span class="item-note">
+                ${{t.totalExpenses()}}
+            </span>
+        <ion-option-button class="button-balanced"
+                           ng-click="sendTrip(t)" ng-click-debounce>
+          Submit
+        </ion-option-button>
+        <ion-option-button class="button-assertive"
+                           ng-click="deleteTrip(t)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

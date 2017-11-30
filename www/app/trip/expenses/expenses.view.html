@@ -1,0 +1,78 @@
+<ion-view view-title="Trip-Expenses">
+    <ion-nav-buttons side="right">
+        <button class="button button-balanced" ng-click="sendTrip()" ng-click-debounce>submit</button>
+    </ion-nav-buttons>
+  <ion-content>
+        <ion-list show-delete="shouldShowDelete"
+                  show-reorder="shouldShowReorder"
+                  can-swipe="true">
+            <ion-item class="item-divider">Airfare</ion-item>
+            <ion-item ng-repeat="ae in tripSvc.currentTrip.expenses | filter:{expenseCategory:'Airfare'} | orderBy:'date'"
+                      ng-click="showExpenseModal(0, ae)">
+                <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+                <h2>{{ae.airline}}</h2>
+                <p>{{ae.date | date:'shortDate'}} - {{ae.amount | currency}}</p>
+                <ion-option-button class="button-assertive"
+                                   ng-click="deleteExpense(ae)">
+                  Delete
+                </ion-option-button>
+          </ion-item>
+            <ion-item class="item-divider">Hotel</ion-item>
+            <ion-item ng-repeat="he in tripSvc.currentTrip.expenses | filter:{expenseCategory:'Hotel'} | orderBy:'date'"
+                      ng-click="showExpenseModal(1, he)">
+                <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+                <h2>{{he.hotelName}}</h2>
+                <p>{{he.date | date:'shortDate'}} - {{he.amount | currency}}</p>
+                <ion-option-button class="button-assertive"
+                                   ng-click="deleteExpense(he)">
+                  Delete
+                </ion-option-button>
+          </ion-item>
+            <ion-item class="item-divider">Ground</ion-item>
+            <ion-item ng-repeat="te in tripSvc.currentTrip.expenses | filter:{expenseCategory:'Transportation'} | orderBy:'date'"
+                      ng-click="showExpenseModal(2, te)">
+                <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+                <h2>{{te.company}}</h2>
+                <p>{{te.date | date:'shortDate'}} - {{te.amount | currency}}</p>
+                <ion-option-button class="button-assertive"
+                                   ng-click="deleteExpense(te)">
+                  Delete
+                </ion-option-button>
+          </ion-item>
+            <ion-item class="item-divider">Mileage</ion-item>
+            <ion-item ng-repeat="mile in tripSvc.currentTrip.expenses | filter:{expenseCategory:'Mileage'} | orderBy:'date'"
+                      ng-click="showExpenseModal(3, mile)">
+                <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+                <h2>{{mile.location}}</h2>
+                <p>{{mile.date | date:'shortDate'}} - {{mile.mileage}} mi (${{mile.amount.toFixed(2)}})</p>
+                <ion-option-button class="button-assertive"
+                                   ng-click="deleteExpense(mile)">
+                  Delete
+                </ion-option-button>
+          </ion-item>
+            <ion-item class="item-divider">Entertainment Meals</ion-item>
+            <ion-item ng-repeat="me in tripSvc.currentTrip.expenses | filter:{expenseCategory:'Meal'} | orderBy:'date'"
+                      ng-click="showExpenseModal(4, me)">
+                <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+                <h2>{{me.restaurant}}</h2>
+                <p>{{me.date | date:'shortDate'}} - {{me.amount | currency}}</p>
+                <ion-option-button class="button-assertive"
+                                   ng-click="deleteExpense(me)">
+                  Delete
+                </ion-option-button>
+          </ion-item>
+            <ion-item class="item-divider">Misc</ion-item>
+            <ion-item ng-repeat="me in tripSvc.currentTrip.expenses | filter:{expenseCategory:'Misc'} | orderBy:'date'"
+                      ng-click="showExpenseModal(5, me)">
+                <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+                <h2>{{me.description}}</h2>
+                <p>{{me.date | date:'shortDate'}} - {{me.amount | currency}}</p>
+                <ion-option-button class="button-assertive"
+                                   ng-click="deleteExpense(me)">
+                  Delete
+                </ion-option-button>
+          </ion-item>
+        </ion-list>
+  </ion-content>
+<div class="btn-add-expense" ng-click="addExpenseSheet()"><i class="ion-plus-circled"></i></div>
+</ion-view>

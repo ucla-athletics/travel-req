@@ -1,0 +1,17 @@
+<ion-view title="Trip-Notes">
+    <ion-nav-buttons side="right">
+        <button class="button button-balanced" ng-click="sendTrip()" ng-click-debounce>submit</button>
+    </ion-nav-buttons>
+	<ion-content class="has-header">
+        <ion-list can-swipe="true">
+            <ion-item ng-repeat="n in tripSvc.currentTrip.notes | orderBy:'noteDate'" ng-click="editNote(n)">
+                <b>{{n.noteDate | date:'shortDate'}}</b> - {{n.notes}}
+                <ion-option-button class="button-assertive"
+                                   ng-click="deleteNote(n)">
+                  Delete
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+<div class="btn-add-expense" ng-click="addNote()"><i class="ion-plus-circled"></i></div>
+</ion-view>

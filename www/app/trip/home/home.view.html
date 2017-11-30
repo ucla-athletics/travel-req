@@ -1,0 +1,40 @@
+<ion-view title="Trip-Home">
+    <ion-nav-buttons side="right">
+        <button class="button button-balanced" ng-click="sendTrip()" ng-click-debounce>submit</button>
+    </ion-nav-buttons>
+	<ion-content class="has-header" scroll="false">
+        <ion-list ng-form="vm.tripForm">            
+            <ion-item class="item-divider item-icon-right">
+                Trip Details
+            </ion-item>
+            <ion-item class="item-input">
+                <span class="input-label">Title</span>
+                <input type="text" ng-model="tripSvc.currentTrip.title"></ion-item>
+            <ion-item class="item-input">
+                <span class="input-label">Purpose</span>
+                <input type="text" ng-model="tripSvc.currentTrip.purpose"></ion-item>
+            <ion-item class="item-input">
+                <span class="input-label">Home City</span>
+                <input type="text" ng-model="tripSvc.currentTrip.homeCity"></ion-item>
+            <ion-item class="item-input">
+                <span class="input-label">Start Date</span>
+                <input type="date" ng-model="tripSvc.currentTrip.startDate"></ion-item>
+            <ion-item class="item-input">
+                <span class="input-label">End Date</span>
+                <input type="date" ng-model="tripSvc.currentTrip.endDate"></ion-item>
+            <ion-item class="item-input item-select">
+                <div class="input-label">Vehicle Used</div>
+                <select ng-model="tripSvc.currentTrip.vehicleUsed">
+                    <option>Personal</option>
+                    <option>Courtesy Car</option>
+                    <option>Univ Vehicle</option>
+                    <option>Other</option>
+                </select></ion-item>
+            <ion-item class="item-divider item-icon-right">
+                Destinations</ion-item>
+            <ion-item>
+                <textarea style="width:100%;" ng-model="tripSvc.currentTrip.destinations"></textarea>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
